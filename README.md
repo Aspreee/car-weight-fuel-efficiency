@@ -1,49 +1,51 @@
 # Car Weight and Fuel Efficiency
 
-Can a car's weight help us understand its fuel efficiency? This beginner-friendly, AI-assisted learning project uses R to explore the relationship with a scatterplot and a simple linear regression.
+This project looks at whether heavier cars tend to get lower gas mileage. It uses R to make a scatterplot and fit a simple linear regression.
 
 ![Scatterplot of car weight and miles per gallon with a downward-sloping regression line](figures/weight_vs_mpg.svg)
 
-## The data
+## About the data
 
-The analysis uses R's built-in `mtcars` dataset, which contains information about **32 car models from 1973–1974**. The two variables in this project are:
+The data comes from `mtcars`, a dataset that is already included in R. It has information about **32 car models from 1973–1974**.
 
-- **`wt`**: car weight, measured in thousands of pounds
-- **`mpg`**: fuel efficiency, measured in miles per US gallon
+The two variables used here are:
+
+- **`wt`**: car weight, in thousands of pounds
+- **`mpg`**: miles per US gallon
 
 Source: [R documentation for the mtcars dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html).
 
-## Analysis steps
+## What the project does
 
-1. Looked at the data and made a scatterplot.
-2. Fit a linear regression model using `lm(mpg ~ wt)` in R.
-3. Interpreted the slope and R-squared.
+1. Takes a look at the data and makes a scatterplot.
+2. Fits a simple linear regression using `lm(mpg ~ wt)`.
+3. Uses the results to describe the relationship between weight and mpg.
 
 ## Results
 
-The fitted line is approximately:
+The fitted regression line is:
 
 **Predicted mpg = 37.29 − 5.34 × weight**
 
-Weight is measured in **1,000 pounds**. In this dataset, a car weighing 1,000 pounds more is associated with about **5.34 fewer miles per gallon**, according to the fitted line. The relationship is negative: the heavier cars in this dataset tended to get fewer miles per gallon.
+The line slopes downward, which means heavier cars in this dataset tended to get fewer miles per gallon. According to the model, a 1,000-pound increase in weight is associated with about **5.34 fewer miles per gallon**.
 
-The model's **R² is about 0.753**. That means the fitted linear relationship with weight explains about 75.3% of the variation in mpg among these 32 cars. It does not mean that the model is 75.3% accurate for every prediction.
+The **R² is about 0.753**, so the linear model using weight explains about 75.3% of the variation in mpg for these 32 cars. This does not mean that every prediction is 75.3% accurate.
 
 ## Limitations
 
-The dataset is small and describes cars from the 1970s, so the results should not be assumed to apply to modern cars. This is observational data: other factors, such as engine characteristics, may also affect fuel efficiency. The association alone does not prove that weight caused the difference.
+This is a small dataset, and the cars are from the 1970s, so the results may not apply to newer cars. Other factors, like engine size, could also affect gas mileage. This analysis shows a relationship, but it does not prove that weight alone caused the difference.
 
-## Run the project
+## How to run it
 
-You only need R; no extra packages are required. In RStudio, open `analysis.R`, choose **Session → Set Working Directory → To Source File Location**, and click **Source**. Alternatively, run the following from this project's folder:
+No extra packages are needed. In RStudio, open `analysis.R`, choose **Session → Set Working Directory → To Source File Location**, and click **Source**. You can also run this from the project folder:
 
 ```r
 source("analysis.R")
 ```
 
-The script prints the regression output and saves the scatterplot to `figures/weight_vs_mpg.svg`.
+The code prints the regression results and saves the plot in the `figures` folder.
 
 ## Files
 
-- `analysis.R` — data exploration, regression, and plot
-- `figures/weight_vs_mpg.svg` — saved chart
+- `analysis.R` — the R code
+- `figures/weight_vs_mpg.svg` — the scatterplot and fitted line
