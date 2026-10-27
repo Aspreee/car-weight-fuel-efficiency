@@ -1,25 +1,25 @@
 # Car Weight and Fuel Efficiency
 
-Can a car's weight help us understand its fuel efficiency? This beginner-friendly R project explores the relationship with a scatterplot and a simple linear regression.
+Can a car's weight help us understand its fuel efficiency? This beginner-friendly, AI-assisted learning project uses R to explore the relationship with a scatterplot and a simple linear regression.
 
 ![Scatterplot of car weight and miles per gallon with a downward-sloping regression line](figures/weight_vs_mpg.svg)
 
 ## The data
 
-I used R's built-in `mtcars` dataset, which contains information about **32 car models from 1973–1974**. The two variables in this project are:
+The analysis uses R's built-in `mtcars` dataset, which contains information about **32 car models from 1973–1974**. The two variables in this project are:
 
 - **`wt`**: car weight, measured in thousands of pounds
 - **`mpg`**: fuel efficiency, measured in miles per US gallon
 
 Source: [R documentation for the mtcars dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html).
 
-## What I did
+## Analysis steps
 
 1. Looked at the data and made a scatterplot.
 2. Fit a linear regression model using `lm(mpg ~ wt)` in R.
 3. Interpreted the slope and R-squared.
 
-## What I found
+## Results
 
 The fitted line is approximately:
 
@@ -35,7 +35,7 @@ The dataset is small and describes cars from the 1970s, so the results should no
 
 ## Run the project
 
-You only need R; no extra packages are required. Open `analysis.R` in RStudio and click **Source**, or run the following from this project's folder:
+You only need R; no extra packages are required. In RStudio, open `analysis.R`, choose **Session → Set Working Directory → To Source File Location**, and click **Source**. Alternatively, run the following from this project's folder:
 
 ```r
 source("analysis.R")
